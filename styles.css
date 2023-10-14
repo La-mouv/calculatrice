@@ -14,7 +14,7 @@ body {
     border-radius: 15px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: repeat(6, 1fr);
 }
 
 .display {
@@ -24,15 +24,15 @@ body {
     border-radius: 10px;
     font-size: 1.5em;
     color: #2e2e2e;
-    margin-bottom: 20px;
     grid-row: 1;
+    grid-column: span 4;
 }
 
-.buttons-row {
+.buttons {
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    grid-gap: 5px;
-    grid-row: 2;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    grid-row: 2 / span 5;
 }
 
 .button {
