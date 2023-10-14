@@ -49,6 +49,10 @@ function calculatePercentage() {
 function calculate() {
 
     console.log('Function calculate() called.');
+    console.log('previousInput:', previousInput);
+    console.log('currentOperation:', currentOperation);
+    console.log('currentInput:', currentInput);
+
     
     if (previousInput && currentOperation && currentInput) {
         let result;
