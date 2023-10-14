@@ -47,6 +47,9 @@ function calculatePercentage() {
 }
 
 function calculate() {
+
+    console.log('Function calculate() called.');
+    
     if (previousInput && currentOperation && currentInput) {
         let result;
 
