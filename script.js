@@ -1,24 +1,95 @@
+let currentInput = "";
+let previousInput = "";
+let currentOperation = null;
+let memory = 0;
+
 function appendToDisplay(value) {
-    const display = document.getElementById('display');
+    currentInput += value;
+    document.getElementById('display').value = currentInput;
+}
 
-    // Vérifier si le dernier nombre entré contient déjà un point
-    if (value === '.' && display.value.split(/[-+*/]/).pop().includes('.')) {
-        return;
-    }
-
-    display.value += value;
+function clearEntry() {
+    currentInput = "";
+    document.getElementById('display').value = currentInput;
 }
 
 function clearDisplay() {
-    const display = document.getElementById('display');
-    display.value = '';
+    currentInput = "";
+    previousInput = "";
+    currentOperation = null;
+    document.getElementById('display').value = currentInput;
+}
+
+function backspace() {
+    currentInput = currentInput.slice(0, -1);
+    document.getElementById('display').value = currentInput;
+}
+
+function toggleSign() {
+    if (currentInput) {
+        currentInput = String(parseFloat(currentInput) * -1);
+        document.getElementById('display').value = currentInput;
+    }
+}
+
+function sqrt() {
+    if (currentInput) {
+        currentInput = String(Math.sqrt(parseFloat(currentInput)));
+        document.getElementById('display').value = currentInput;
+    }
+}
+
+function calculatePercentage() {
+    if (currentInput) {
+        currentInput = String(parseFloat(currentInput) / 100);
+        document.getElementById('display').value = currentInput;
+    }
 }
 
 function calculate() {
-    const display = document.getElementById('display');
-    try {
-        display.value = eval(display.value);
-    } catch (error) {
-        display.value = 'Erreur';
+    if (previousInput && currentOperation && currentInput) {
+        let result;
+
+        switch (currentOperation) {
+            case '+':
+                result = parseFloat(previousInput) + parseFloat(currentInput);
+                break;
+            case '-':
+                result = parseFloat(previousInput) - parseFloat(currentInput);
+                break;
+            case '*':
+                result = parseFloat(previousInput) * parseFloat(currentInput);
+                break;
+            case '/':
+                result = parseFloat(previousInput) / parseFloat(currentInput);
+                break;
+        }
+
+        currentInput = String(result);
+        previousInput = "";
+        currentOperation = null;
+
+        document.getElementById('display').value = currentInput;
     }
+}
+
+function setOperation(op) {
+    if (currentInput) {
+        previousInput = currentInput;
+        currentInput = "";
+        currentOperation = op;
+    }
+}
+
+function memoryAdd() {
+    memory += parseFloat(currentInput);
+}
+
+function memorySubtract() {
+    memory -= parseFloat(currentInput);
+}
+
+function memoryRecall() {
+    currentInput = String(memory);
+    document.getElementById('display').value = currentInput;
 }
