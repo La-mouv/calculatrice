@@ -70,6 +70,9 @@ function calculate() {
             case '/':
                 result = parseFloat(previousInput) / parseFloat(currentInput);
                 break;
+                default:
+        console.log('Unexpected operation:', currentOperation);
+        break;
         }
 
         currentInput = String(result);
