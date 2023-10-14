@@ -47,12 +47,6 @@ function calculatePercentage() {
 }
 
 function calculate() {
-
-    console.log('Function calculate() called.');
-    console.log('previousInput:', previousInput);
-    console.log('currentOperation:', currentOperation);
-    console.log('currentInput:', currentInput);
-
     
     if (previousInput && currentOperation && currentInput) {
         let result;
@@ -70,9 +64,6 @@ function calculate() {
             case '/':
                 result = parseFloat(previousInput) / parseFloat(currentInput);
                 break;
-                default:
-        console.log('Unexpected operation:', currentOperation);
-        break;
         }
 
         currentInput = String(result);
