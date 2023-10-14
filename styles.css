@@ -1,44 +1,50 @@
 body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #f5e6d1; /* Couleur de fond crème */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f5f5f5;
+    margin: 0;
 }
 
 .calculator {
-    width: 250px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    padding: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 5px solid #9c8576; /* Bordure brun doux */
+    padding: 20px;
+    border-radius: 15px; /* Coins arrondis */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1); /* Ombre douce */
 }
 
-#display {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    font-size: 20px;
-    border: 1px solid #ddd;
+.display {
+    background-color: #e4d5c3; /* Fond beige doux */
+    border: 2px solid #9c8576;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 1.5em;
+    color: #2e2e2e;
+    margin-bottom: 20px;
 }
 
-.buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-}
-
-button {
-    padding: 10px;
-    font-size: 18px;
+.button {
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #f2c38f; /* Couleur pêche douce */
+    color: #2e2e2e;
     border: none;
-    background-color: #f1f1f1;
-    border-radius: 4px;
+    border-radius: 5px;
+    font-size: 1.2em;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: 0.2s; /* Transition pour le survol */
 }
 
-button:hover {
-    background-color: #ddd;
+.button.operation {
+    background-color: #bfae9d; /* Couleur taupe */
 }
 
+.button:hover {
+    background-color: #f2d2a2; /* Couleur pêche claire lors du survol */
+}
+
+.button.operation:hover {
+    background-color: #c9bcb2; /* Couleur taupe claire lors du survol */
+}
