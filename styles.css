@@ -8,6 +8,40 @@ body {
     margin: 0;
 }
 
+.description {
+    background-color: #FFDDDD;
+    border: 3px dashed #FF00FF;
+    padding: 20px;
+    font-family: 'Comic Sans MS', sans-serif;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.description h2 {
+    color: #FF00FF;
+    font-size: 28px;
+    text-shadow: 3px 3px 0px #00FF00;
+}
+
+.description p {
+    font-size: 18px;
+    color: #0000FF;
+    background-color: #FFFF00;
+    padding: 10px;
+    display: inline-block;
+    border-radius: 8px;
+}
+
+@keyframes blinking {
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+.description p:hover {
+    animation: blinking 0.5s infinite;
+}
+
 .calculator {
     border: 5px solid #9c8576;
     padding: 20px;
